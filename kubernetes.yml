@@ -5,10 +5,11 @@ metadata:
   labels:
     app: sba-flask-app
 spec:
-  type: LoadBalancer
+  type: NodePort
   ports:
-  - port: 80
-    targetPort: 9090
+  - port: 8080
+    targetPort: 8080
+    nodePort: 32000
   selector:
     app: sba-flask-app
 ---
@@ -32,4 +33,4 @@ spec:
       - name: sba-flask-app
         image: spadevapps/sba.kubernetes-cluster
         ports:
-        - containerPort: 9090
+        - containerPort: 8080
