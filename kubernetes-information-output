@@ -35,142 +35,6 @@ Events:
   ----    ------             ----  ----                   -------
   Normal  ScalingReplicaSet  48m   deployment-controller  Scaled up replica set sba-deployment-5b8b5bc754 to 3
 
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  annotations:
-    deployment.kubernetes.io/revision: "1"
-    kubectl.kubernetes.io/last-applied-configuration: |
-      {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"labels":{"app":"sba-flask-app"},"name":"sba-deployment","namespace":"default"},"spec":{"replicas":3,"selector":{"matchLabels":{"app":"sba-flask-app"}},"template":{"metadata":{"labels":{"app":"sba-flask-app"}},"spec":{"containers":[{"image":"spadevapps/sba.kubernetes-cluster","name":"sba-flask-app","ports":[{"containerPort":8080}]}]}}}}
-  creationTimestamp: "2021-01-20T00:48:07Z"
-  generation: 1
-  labels:
-    app: sba-flask-app
-  managedFields:
-  - apiVersion: apps/v1
-    fieldsType: FieldsV1
-    fieldsV1:
-      f:metadata:
-        f:annotations:
-          .: {}
-          f:kubectl.kubernetes.io/last-applied-configuration: {}
-        f:labels:
-          .: {}
-          f:app: {}
-      f:spec:
-        f:progressDeadlineSeconds: {}
-        f:replicas: {}
-        f:revisionHistoryLimit: {}
-        f:selector:
-          f:matchLabels:
-            .: {}
-            f:app: {}
-        f:strategy:
-          f:rollingUpdate:
-            .: {}
-            f:maxSurge: {}
-            f:maxUnavailable: {}
-          f:type: {}
-        f:template:
-          f:metadata:
-            f:labels:
-              .: {}
-              f:app: {}
-          f:spec:
-            f:containers:
-              k:{"name":"sba-flask-app"}:
-                .: {}
-                f:image: {}
-                f:imagePullPolicy: {}
-                f:name: {}
-                f:ports:
-                  .: {}
-                  k:{"containerPort":8080,"protocol":"TCP"}:
-                    .: {}
-                    f:containerPort: {}
-                    f:protocol: {}
-                f:resources: {}
-                f:terminationMessagePath: {}
-                f:terminationMessagePolicy: {}
-            f:dnsPolicy: {}
-            f:restartPolicy: {}
-            f:schedulerName: {}
-            f:securityContext: {}
-            f:terminationGracePeriodSeconds: {}
-    manager: kubectl-client-side-apply
-    operation: Update
-    time: "2021-01-20T00:48:07Z"
-  - apiVersion: apps/v1
-    fieldsType: FieldsV1
-    fieldsV1:
-      f:metadata:
-        f:annotations:
-          f:deployment.kubernetes.io/revision: {}
-      f:status:
-        f:availableReplicas: {}
-        f:conditions:
-          .: {}
-          k:{"type":"Available"}:
-            .: {}
-            f:lastTransitionTime: {}
-            f:lastUpdateTime: {}
-            f:message: {}
-            f:reason: {}
-            f:status: {}
-            f:type: {}
-          k:{"type":"Progressing"}:
-            .: {}
-            f:lastTransitionTime: {}
-            f:lastUpdateTime: {}
-            f:message: {}
-            f:reason: {}
-            f:status: {}
-            f:type: {}
-        f:observedGeneration: {}
-        f:readyReplicas: {}
-        f:replicas: {}
-        f:updatedReplicas: {}
-    manager: kube-controller-manager
-    operation: Update
-    time: "2021-01-20T00:48:30Z"
-  name: sba-deployment
-  namespace: default
-  resourceVersion: "649"
-  selfLink: /apis/apps/v1/namespaces/default/deployments/sba-deployment
-  uid: 0ceb3304-819f-4029-9f70-f5fb44ccda3d
-spec:
-  progressDeadlineSeconds: 600
-  replicas: 3
-  revisionHistoryLimit: 10
-  selector:
-    matchLabels:
-      app: sba-flask-app
-  strategy:
-    rollingUpdate:
-      maxSurge: 25%
-      maxUnavailable: 25%
-    type: RollingUpdate
-  template:
-    metadata:
-      creationTimestamp: null
-      labels:
-        app: sba-flask-app
-    spec:
-      containers:
-      - image: spadevapps/sba.kubernetes-cluster
-        imagePullPolicy: Always
-        name: sba-flask-app
-        ports:
-        - containerPort: 8080
-          protocol: TCP
-        resources: {}
-        terminationMessagePath: /dev/termination-log
-        terminationMessagePolicy: File
-      dnsPolicy: ClusterFirst
-      restartPolicy: Always
-      schedulerName: default-scheduler
-      securityContext: {}
-      terminationGracePeriodSeconds: 30
 status:
   availableReplicas: 3
   conditions:
@@ -234,10 +98,10 @@ Containers:
       /var/run/secrets/kubernetes.io/serviceaccount from default-token-z8s6d (ro)
 Conditions:
   Type              Status
-  Initialized       True 
-  Ready             True 
-  ContainersReady   True 
-  PodScheduled      True 
+  Initialized       True
+  Ready             True
+  ContainersReady   True
+  PodScheduled      True
 Volumes:
   default-token-z8s6d:
     Type:        Secret (a volume populated by a Secret)
@@ -286,10 +150,10 @@ Containers:
       /var/run/secrets/kubernetes.io/serviceaccount from default-token-z8s6d (ro)
 Conditions:
   Type              Status
-  Initialized       True 
-  Ready             True 
-  ContainersReady   True 
-  PodScheduled      True 
+  Initialized       True
+  Ready             True
+  ContainersReady   True
+  PodScheduled      True
 Volumes:
   default-token-z8s6d:
     Type:        Secret (a volume populated by a Secret)
@@ -338,10 +202,10 @@ Containers:
       /var/run/secrets/kubernetes.io/serviceaccount from default-token-z8s6d (ro)
 Conditions:
   Type              Status
-  Initialized       True 
-  Ready             True 
-  ContainersReady   True 
-  PodScheduled      True 
+  Initialized       True
+  Ready             True
+  ContainersReady   True
+  PodScheduled      True
 Volumes:
   default-token-z8s6d:
     Type:        Secret (a volume populated by a Secret)
