@@ -1,0 +1,386 @@
+Deployment info
+
+NAME             READY   UP-TO-DATE   AVAILABLE   AGE
+sba-deployment   3/3     3            3           38m
+
+Name:                   sba-deployment
+Namespace:              default
+CreationTimestamp:      Tue, 19 Jan 2021 19:48:07 -0500
+Labels:                 app=sba-flask-app
+Annotations:            deployment.kubernetes.io/revision: 1
+Selector:               app=sba-flask-app
+Replicas:               3 desired | 3 updated | 3 total | 3 available | 0 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
+Pod Template:
+  Labels:  app=sba-flask-app
+  Containers:
+   sba-flask-app:
+    Image:        spadevapps/sba.kubernetes-cluster
+    Port:         8080/TCP
+    Host Port:    0/TCP
+    Environment:  <none>
+    Mounts:       <none>
+  Volumes:        <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Available      True    MinimumReplicasAvailable
+  Progressing    True    NewReplicaSetAvailable
+OldReplicaSets:  <none>
+NewReplicaSet:   sba-deployment-5b8b5bc754 (3/3 replicas created)
+Events:
+  Type    Reason             Age   From                   Message
+  ----    ------             ----  ----                   -------
+  Normal  ScalingReplicaSet  38m   deployment-controller  Scaled up replica set sba-deployment-5b8b5bc754 to 3
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "1"
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"labels":{"app":"sba-flask-app"},"name":"sba-deployment","namespace":"default"},"spec":{"replicas":3,"selector":{"matchLabels":{"app":"sba-flask-app"}},"template":{"metadata":{"labels":{"app":"sba-flask-app"}},"spec":{"containers":[{"image":"spadevapps/sba.kubernetes-cluster","name":"sba-flask-app","ports":[{"containerPort":8080}]}]}}}}
+  creationTimestamp: "2021-01-20T00:48:07Z"
+  generation: 1
+  labels:
+    app: sba-flask-app
+  managedFields:
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:kubectl.kubernetes.io/last-applied-configuration: {}
+        f:labels:
+          .: {}
+          f:app: {}
+      f:spec:
+        f:progressDeadlineSeconds: {}
+        f:replicas: {}
+        f:revisionHistoryLimit: {}
+        f:selector:
+          f:matchLabels:
+            .: {}
+            f:app: {}
+        f:strategy:
+          f:rollingUpdate:
+            .: {}
+            f:maxSurge: {}
+            f:maxUnavailable: {}
+          f:type: {}
+        f:template:
+          f:metadata:
+            f:labels:
+              .: {}
+              f:app: {}
+          f:spec:
+            f:containers:
+              k:{"name":"sba-flask-app"}:
+                .: {}
+                f:image: {}
+                f:imagePullPolicy: {}
+                f:name: {}
+                f:ports:
+                  .: {}
+                  k:{"containerPort":8080,"protocol":"TCP"}:
+                    .: {}
+                    f:containerPort: {}
+                    f:protocol: {}
+                f:resources: {}
+                f:terminationMessagePath: {}
+                f:terminationMessagePolicy: {}
+            f:dnsPolicy: {}
+            f:restartPolicy: {}
+            f:schedulerName: {}
+            f:securityContext: {}
+            f:terminationGracePeriodSeconds: {}
+    manager: kubectl-client-side-apply
+    operation: Update
+    time: "2021-01-20T00:48:07Z"
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          f:deployment.kubernetes.io/revision: {}
+      f:status:
+        f:availableReplicas: {}
+        f:conditions:
+          .: {}
+          k:{"type":"Available"}:
+            .: {}
+            f:lastTransitionTime: {}
+            f:lastUpdateTime: {}
+            f:message: {}
+            f:reason: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Progressing"}:
+            .: {}
+            f:lastTransitionTime: {}
+            f:lastUpdateTime: {}
+            f:message: {}
+            f:reason: {}
+            f:status: {}
+            f:type: {}
+        f:observedGeneration: {}
+        f:readyReplicas: {}
+        f:replicas: {}
+        f:updatedReplicas: {}
+    manager: kube-controller-manager
+    operation: Update
+    time: "2021-01-20T00:48:30Z"
+  name: sba-deployment
+  namespace: default
+  resourceVersion: "649"
+  selfLink: /apis/apps/v1/namespaces/default/deployments/sba-deployment
+  uid: 0ceb3304-819f-4029-9f70-f5fb44ccda3d
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 3
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: sba-flask-app
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: sba-flask-app
+    spec:
+      containers:
+      - image: spadevapps/sba.kubernetes-cluster
+        imagePullPolicy: Always
+        name: sba-flask-app
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+status:
+  availableReplicas: 3
+  conditions:
+  - lastTransitionTime: "2021-01-20T00:48:30Z"
+    lastUpdateTime: "2021-01-20T00:48:30Z"
+    message: Deployment has minimum availability.
+    reason: MinimumReplicasAvailable
+    status: "True"
+    type: Available
+  - lastTransitionTime: "2021-01-20T00:48:07Z"
+    lastUpdateTime: "2021-01-20T00:48:30Z"
+    message: ReplicaSet "sba-deployment-5b8b5bc754" has successfully progressed.
+    reason: NewReplicaSetAvailable
+    status: "True"
+    type: Progressing
+  observedGeneration: 1
+  readyReplicas: 3
+  replicas: 3
+  updatedReplicas: 3
+
+
+
+Pod Info
+
+NAME                              READY   STATUS    RESTARTS   AGE
+sba-deployment-5b8b5bc754-8ptg6   1/1     Running   0          38m
+sba-deployment-5b8b5bc754-bfn9m   1/1     Running   0          38m
+sba-deployment-5b8b5bc754-tqd6z   1/1     Running   0          38m
+
+NAME                              READY   STATUS    RESTARTS   AGE   IP           NODE       NOMINATED NODE   READINESS GATES
+sba-deployment-5b8b5bc754-8ptg6   1/1     Running   0          38m   172.17.0.5   minikube   <none>           <none>
+sba-deployment-5b8b5bc754-bfn9m   1/1     Running   0          38m   172.17.0.3   minikube   <none>           <none>
+sba-deployment-5b8b5bc754-tqd6z   1/1     Running   0          38m   172.17.0.4   minikube   <none>           <none>
+
+Name:         sba-deployment-5b8b5bc754-8ptg6
+Namespace:    default
+Priority:     0
+Node:         minikube/192.168.49.2
+Start Time:   Tue, 19 Jan 2021 19:48:07 -0500
+Labels:       app=sba-flask-app
+              pod-template-hash=5b8b5bc754
+Annotations:  <none>
+Status:       Running
+IP:           172.17.0.5
+IPs:
+  IP:           172.17.0.5
+Controlled By:  ReplicaSet/sba-deployment-5b8b5bc754
+Containers:
+  sba-flask-app:
+    Container ID:   docker://2e9a25e1a976b42db2dfe0fa37bfd55e736e1a603d81c7cab78961471226de76
+    Image:          spadevapps/sba.kubernetes-cluster
+    Image ID:       docker-pullable://spadevapps/sba.kubernetes-cluster@sha256:5d8ab2e39ab1493f413ade294037cfe47741ac75bb750aea683a57416f334975
+    Port:           8080/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Tue, 19 Jan 2021 19:48:30 -0500
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-z8s6d (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  default-token-z8s6d:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-z8s6d
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                 node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  38m   default-scheduler  Successfully assigned default/sba-deployment-5b8b5bc754-8ptg6 to minikube
+  Normal  Pulling    38m   kubelet            Pulling image "spadevapps/sba.kubernetes-cluster"
+  Normal  Pulled     37m   kubelet            Successfully pulled image "spadevapps/sba.kubernetes-cluster" in 21.0631679s
+  Normal  Created    37m   kubelet            Created container sba-flask-app
+  Normal  Started    37m   kubelet            Started container sba-flask-app
+
+
+Name:         sba-deployment-5b8b5bc754-bfn9m
+Namespace:    default
+Priority:     0
+Node:         minikube/192.168.49.2
+Start Time:   Tue, 19 Jan 2021 19:48:07 -0500
+Labels:       app=sba-flask-app
+              pod-template-hash=5b8b5bc754
+Annotations:  <none>
+Status:       Running
+IP:           172.17.0.3
+IPs:
+  IP:           172.17.0.3
+Controlled By:  ReplicaSet/sba-deployment-5b8b5bc754
+Containers:
+  sba-flask-app:
+    Container ID:   docker://209acd3222786704a0d8a12c205d28a9149a3a5324e139561e84ba05f63b729b
+    Image:          spadevapps/sba.kubernetes-cluster
+    Image ID:       docker-pullable://spadevapps/sba.kubernetes-cluster@sha256:5d8ab2e39ab1493f413ade294037cfe47741ac75bb750aea683a57416f334975
+    Port:           8080/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Tue, 19 Jan 2021 19:48:28 -0500
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-z8s6d (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  default-token-z8s6d:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-z8s6d
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                 node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  38m   default-scheduler  Successfully assigned default/sba-deployment-5b8b5bc754-bfn9m to minikube
+  Normal  Pulling    38m   kubelet            Pulling image "spadevapps/sba.kubernetes-cluster"
+  Normal  Pulled     37m   kubelet            Successfully pulled image "spadevapps/sba.kubernetes-cluster" in 19.3343077s
+  Normal  Created    37m   kubelet            Created container sba-flask-app
+  Normal  Started    37m   kubelet            Started container sba-flask-app
+
+
+Name:         sba-deployment-5b8b5bc754-tqd6z
+Namespace:    default
+Priority:     0
+Node:         minikube/192.168.49.2
+Start Time:   Tue, 19 Jan 2021 19:48:07 -0500
+Labels:       app=sba-flask-app
+              pod-template-hash=5b8b5bc754
+Annotations:  <none>
+Status:       Running
+IP:           172.17.0.4
+IPs:
+  IP:           172.17.0.4
+Controlled By:  ReplicaSet/sba-deployment-5b8b5bc754
+Containers:
+  sba-flask-app:
+    Container ID:   docker://a43b9587c59e0e2ce95a9a2a183272d46be5cd25b38b62ba622fad39cf4f03e2
+    Image:          spadevapps/sba.kubernetes-cluster
+    Image ID:       docker-pullable://spadevapps/sba.kubernetes-cluster@sha256:5d8ab2e39ab1493f413ade294037cfe47741ac75bb750aea683a57416f334975
+    Port:           8080/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Tue, 19 Jan 2021 19:48:29 -0500
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-z8s6d (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  default-token-z8s6d:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-z8s6d
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                 node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  38m   default-scheduler  Successfully assigned default/sba-deployment-5b8b5bc754-tqd6z to minikube
+  Normal  Pulling    38m   kubelet            Pulling image "spadevapps/sba.kubernetes-cluster"
+  Normal  Pulled     37m   kubelet            Successfully pulled image "spadevapps/sba.kubernetes-cluster" in 20.7641583s
+  Normal  Created    37m   kubelet            Created container sba-flask-app
+  Normal  Started    37m   kubelet            Started container sba-flask-app
+
+
+
+Sercive Info
+
+NAME         TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
+kubernetes   ClusterIP   10.96.0.1        <none>        443/TCP          40m
+sba-svc      NodePort    10.107.208.126   <none>        8080:32000/TCP   38m
+
+Name:                     sba-svc
+Namespace:                default
+Labels:                   app=sba-flask-app
+Annotations:              <none>
+Selector:                 app=sba-flask-app
+Type:                     NodePort
+IP Families:              <none>
+IP:                       10.107.208.126
+IPs:                      <none>
+Port:                     <unset>  8080/TCP
+TargetPort:               8080/TCP
+NodePort:                 <unset>  32000/TCP
+Endpoints:                172.17.0.3:8080,172.17.0.4:8080,172.17.0.5:8080
+Session Affinity:         None
+External Traffic Policy:  Cluster
+Events:                   <none>

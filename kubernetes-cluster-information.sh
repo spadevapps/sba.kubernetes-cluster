@@ -4,6 +4,8 @@ kubectl get deployments
 echo
 kubectl describe deployment sba-deployment
 echo
+kubectl get deployment sba-deployment -o yaml
+echo
 echo
 echo
 echo "Pod Info"
@@ -20,4 +22,4 @@ echo "Sercive Info"
 echo
 kubectl get services
 echo
-kubectl describe service
+kubectl describe service sba-svc
