@@ -23,3 +23,9 @@ echo
 kubectl get services
 echo
 kubectl describe service sba-svc
+echo
+echo
+echo
+echo "Node Info"
+echo
+kubectl get nodes

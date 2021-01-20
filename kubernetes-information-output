@@ -1,7 +1,7 @@
 Deployment info
 
 NAME             READY   UP-TO-DATE   AVAILABLE   AGE
-sba-deployment   3/3     3            3           38m
+sba-deployment   3/3     3            3           48m
 
 Name:                   sba-deployment
 Namespace:              default
@@ -33,7 +33,7 @@ NewReplicaSet:   sba-deployment-5b8b5bc754 (3/3 replicas created)
 Events:
   Type    Reason             Age   From                   Message
   ----    ------             ----  ----                   -------
-  Normal  ScalingReplicaSet  38m   deployment-controller  Scaled up replica set sba-deployment-5b8b5bc754 to 3
+  Normal  ScalingReplicaSet  48m   deployment-controller  Scaled up replica set sba-deployment-5b8b5bc754 to 3
 
 apiVersion: apps/v1
 kind: Deployment
@@ -196,14 +196,14 @@ status:
 Pod Info
 
 NAME                              READY   STATUS    RESTARTS   AGE
-sba-deployment-5b8b5bc754-8ptg6   1/1     Running   0          38m
-sba-deployment-5b8b5bc754-bfn9m   1/1     Running   0          38m
-sba-deployment-5b8b5bc754-tqd6z   1/1     Running   0          38m
+sba-deployment-5b8b5bc754-8ptg6   1/1     Running   0          48m
+sba-deployment-5b8b5bc754-bfn9m   1/1     Running   0          48m
+sba-deployment-5b8b5bc754-tqd6z   1/1     Running   0          48m
 
 NAME                              READY   STATUS    RESTARTS   AGE   IP           NODE       NOMINATED NODE   READINESS GATES
-sba-deployment-5b8b5bc754-8ptg6   1/1     Running   0          38m   172.17.0.5   minikube   <none>           <none>
-sba-deployment-5b8b5bc754-bfn9m   1/1     Running   0          38m   172.17.0.3   minikube   <none>           <none>
-sba-deployment-5b8b5bc754-tqd6z   1/1     Running   0          38m   172.17.0.4   minikube   <none>           <none>
+sba-deployment-5b8b5bc754-8ptg6   1/1     Running   0          48m   172.17.0.5   minikube   <none>           <none>
+sba-deployment-5b8b5bc754-bfn9m   1/1     Running   0          48m   172.17.0.3   minikube   <none>           <none>
+sba-deployment-5b8b5bc754-tqd6z   1/1     Running   0          48m   172.17.0.4   minikube   <none>           <none>
 
 Name:         sba-deployment-5b8b5bc754-8ptg6
 Namespace:    default
@@ -250,11 +250,11 @@ Tolerations:     node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
 Events:
   Type    Reason     Age   From               Message
   ----    ------     ----  ----               -------
-  Normal  Scheduled  38m   default-scheduler  Successfully assigned default/sba-deployment-5b8b5bc754-8ptg6 to minikube
-  Normal  Pulling    38m   kubelet            Pulling image "spadevapps/sba.kubernetes-cluster"
-  Normal  Pulled     37m   kubelet            Successfully pulled image "spadevapps/sba.kubernetes-cluster" in 21.0631679s
-  Normal  Created    37m   kubelet            Created container sba-flask-app
-  Normal  Started    37m   kubelet            Started container sba-flask-app
+  Normal  Scheduled  48m   default-scheduler  Successfully assigned default/sba-deployment-5b8b5bc754-8ptg6 to minikube
+  Normal  Pulling    48m   kubelet            Pulling image "spadevapps/sba.kubernetes-cluster"
+  Normal  Pulled     48m   kubelet            Successfully pulled image "spadevapps/sba.kubernetes-cluster" in 21.0631679s
+  Normal  Created    48m   kubelet            Created container sba-flask-app
+  Normal  Started    48m   kubelet            Started container sba-flask-app
 
 
 Name:         sba-deployment-5b8b5bc754-bfn9m
@@ -302,11 +302,11 @@ Tolerations:     node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
 Events:
   Type    Reason     Age   From               Message
   ----    ------     ----  ----               -------
-  Normal  Scheduled  38m   default-scheduler  Successfully assigned default/sba-deployment-5b8b5bc754-bfn9m to minikube
-  Normal  Pulling    38m   kubelet            Pulling image "spadevapps/sba.kubernetes-cluster"
-  Normal  Pulled     37m   kubelet            Successfully pulled image "spadevapps/sba.kubernetes-cluster" in 19.3343077s
-  Normal  Created    37m   kubelet            Created container sba-flask-app
-  Normal  Started    37m   kubelet            Started container sba-flask-app
+  Normal  Scheduled  48m   default-scheduler  Successfully assigned default/sba-deployment-5b8b5bc754-bfn9m to minikube
+  Normal  Pulling    48m   kubelet            Pulling image "spadevapps/sba.kubernetes-cluster"
+  Normal  Pulled     48m   kubelet            Successfully pulled image "spadevapps/sba.kubernetes-cluster" in 19.3343077s
+  Normal  Created    48m   kubelet            Created container sba-flask-app
+  Normal  Started    48m   kubelet            Started container sba-flask-app
 
 
 Name:         sba-deployment-5b8b5bc754-tqd6z
@@ -354,19 +354,19 @@ Tolerations:     node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
 Events:
   Type    Reason     Age   From               Message
   ----    ------     ----  ----               -------
-  Normal  Scheduled  38m   default-scheduler  Successfully assigned default/sba-deployment-5b8b5bc754-tqd6z to minikube
-  Normal  Pulling    38m   kubelet            Pulling image "spadevapps/sba.kubernetes-cluster"
-  Normal  Pulled     37m   kubelet            Successfully pulled image "spadevapps/sba.kubernetes-cluster" in 20.7641583s
-  Normal  Created    37m   kubelet            Created container sba-flask-app
-  Normal  Started    37m   kubelet            Started container sba-flask-app
+  Normal  Scheduled  48m   default-scheduler  Successfully assigned default/sba-deployment-5b8b5bc754-tqd6z to minikube
+  Normal  Pulling    48m   kubelet            Pulling image "spadevapps/sba.kubernetes-cluster"
+  Normal  Pulled     48m   kubelet            Successfully pulled image "spadevapps/sba.kubernetes-cluster" in 20.7641583s
+  Normal  Created    48m   kubelet            Created container sba-flask-app
+  Normal  Started    48m   kubelet            Started container sba-flask-app
 
 
 
 Sercive Info
 
 NAME         TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
-kubernetes   ClusterIP   10.96.0.1        <none>        443/TCP          40m
-sba-svc      NodePort    10.107.208.126   <none>        8080:32000/TCP   38m
+kubernetes   ClusterIP   10.96.0.1        <none>        443/TCP          50m
+sba-svc      NodePort    10.107.208.126   <none>        8080:32000/TCP   48m
 
 Name:                     sba-svc
 Namespace:                default
@@ -384,3 +384,10 @@ Endpoints:                172.17.0.3:8080,172.17.0.4:8080,172.17.0.5:8080
 Session Affinity:         None
 External Traffic Policy:  Cluster
 Events:                   <none>
+
+
+
+Node Info
+
+NAME       STATUS   ROLES    AGE   VERSION
+minikube   Ready    master   51m   v1.19.4
